@@ -1,0 +1,23 @@
+# Dependências
+node_modules/
+
+# Build
+dist/
+dist-ssr/
+
+# Segredos
+.env
+.env.local
+.env.production
+
+# Playwright
+test-results/
+playwright-report/
+
+# TypeScript
+*.tsbuildinfo
+
+# IDE
+.idea/
+.vscode/
+*.swp
