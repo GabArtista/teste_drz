@@ -40,7 +40,7 @@ async def test_ask_requires_auth(client):
 @pytest.mark.asyncio
 async def test_ask_creates_session(client):
     with patch(
-        "app.Infrastructure.AI.anthropic_ai_service.AnthropicAIService.ask",
+        "app.Infrastructure.AI.ollama_ai_service.OllamaAIService.ask",
         new_callable=AsyncMock,
         return_value="O elevador suporta 180 kg.",
     ):
@@ -60,7 +60,7 @@ async def test_ask_creates_session(client):
 @pytest.mark.asyncio
 async def test_ask_reuses_session(client):
     with patch(
-        "app.Infrastructure.AI.anthropic_ai_service.AnthropicAIService.ask",
+        "app.Infrastructure.AI.ollama_ai_service.OllamaAIService.ask",
         new_callable=AsyncMock,
         return_value="Resposta da IA.",
     ):
@@ -83,7 +83,7 @@ async def test_ask_reuses_session(client):
 @pytest.mark.asyncio
 async def test_history_returns_messages(client):
     with patch(
-        "app.Infrastructure.AI.anthropic_ai_service.AnthropicAIService.ask",
+        "app.Infrastructure.AI.ollama_ai_service.OllamaAIService.ask",
         new_callable=AsyncMock,
         return_value="Mensagem de resposta.",
     ):
